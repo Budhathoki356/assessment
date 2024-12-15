@@ -708,6 +708,10 @@ footer {
   margin-top: 20px;
 }
 
+footer img {
+  width: 120px;
+}
+
 /* Extra Small (phones, 0px and up) */
 @media (max-width: 575.98px) {
 }
@@ -732,6 +736,10 @@ footer {
 
   .burger__menu {
     display: block;
+  }
+
+  .article__body {
+    padding: 0;
   }
 }
 
