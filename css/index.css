@@ -664,7 +664,7 @@ footer {
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   row-gap: 20px;
   column-gap: 20px;
 }
@@ -689,6 +689,20 @@ footer {
   grid-row: 3 / 3;
 }
 
+.contact__form #submit__btn {
+  grid-column: 2 / span 2;
+  grid-row: 4 / 4;
+  padding: 20px 50px;
+  height: 80px;
+  justify-self: end;
+}
+
+
+.contact__form #submit__btn:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
 .contact__form label {
   font-size: 16px;
   font-weight: 500;
@@ -710,6 +724,136 @@ footer {
 
 footer img {
   width: 120px;
+}
+
+/* Signup Form */
+.signup-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signup-form .form-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.signup-form .form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.signup-form .form-input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.signup-form .form-input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.signup-form .form-submit {
+  padding: 16px 0;
+  background-color: #007BFF;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-form .form-submit:hover {
+  background-color: #0056b3;
+}
+
+.signup-form .form-submit:focus {
+  outline: none;
+}
+
+.signup-form .login_btn, .login-form .signup_btn {
+  color: #0056b3;
+}
+
+/* Login Form */
+.login-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-form .form-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.login-form .form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.login-form .form-input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.login-form .form-input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.login-form .form-submit {
+  padding: 16px 0;
+  background-color: #007BFF;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form .form-submit:hover {
+  background-color: #0056b3;
+}
+
+.login-form .form-submit:focus {
+  outline: none;
 }
 
 /* Extra Small (phones, 0px and up) */
