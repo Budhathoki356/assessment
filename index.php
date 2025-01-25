@@ -1,7 +1,13 @@
 <?php
+require_once 'db.php';
 
 session_start();
 $is_logged_in = isset($_SESSION['user_id']);
+
+$sql = "SELECT * FROM articles ORDER BY created_at DESC LIMIT 3";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,44 +79,21 @@ $is_logged_in = isset($_SESSION['user_id']);
     <section class="popular-articles container">
       <h1 class="article-heading">Popular Articles</h1>
       <div class="popular-article__cards flex">
-        <a href="./article.php" class="article__card">
-          <img src="./assets/img/image1.png" alt="" class="card__img" />
-          <div class="article__card-body">
-            <h2 class="article__card-title">
-              Top 10 Hidden Gems You Must Visit in 2024
-            </h2>
-            <p class="article__card-description">
-              Discover lesser-known destinations that offer unforgettable
-              experiences and stunning views.
-            </p>
-          </div>
-        </a>
-        <div class="article__card">
-          <img src="./assets/img/image2.png" alt="" class="card__img" />
-          <div class="article__card-body">
-            <h2 class="article__card-title">
-              <a href="./article.php"> The Ultimate Guide to Solo Travel </a>
-            </h2>
-            <p class="article__card-description">
-              Everything you need to know to confidently explore the world on
-              your own.
-            </p>
-          </div>
-        </div>
-        <div class="article__card">
-          <img src="./assets/img/image3.png" alt="" class="card__img" />
-          <div class="article__card-body">
-            <h2 class="article__card-title">
-              <a href="./article.php">
-                How to Travel on a Budget Without Sacrificing Comfort
-              </a>
-            </h2>
-            <p class="article__card-description">
-              Learn tips and tricks to save money while enjoying a luxurious
-              travel experience.
-            </p>
-          </div>
-        </div>
+        <?php if ($articles): ?>
+          <?php foreach ($articles as $article): ?>
+            <a href="view-article.php?slug=<?php echo urlencode($article['slug']); ?>" class="article__card">
+              <img src="./uploads/<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="card__img" />
+              <div class="article__card-body">
+                <h2 class="article__card-title">
+                  <?php echo htmlspecialchars($article['title']); ?>
+                </h2>
+                <p class="article__card-description">
+                  <?php echo substr(htmlspecialchars($article['content']), 0, 100); ?>...
+                </p>
+              </div>
+            </a>
+          <?php endforeach; ?>
+        <?php endif ?>
       </div>
     </section>
     <section class="journey container">

@@ -539,8 +539,18 @@ footer {
   padding: 30px 80px;
 }
 
+.article__thumbnail_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  overflow: hidden;
+}
+
 .article__thumbnail {
   border-radius: 5px;
+  /* width: 250px; */
 }
 
 .article__body {
