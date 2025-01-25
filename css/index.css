@@ -856,6 +856,123 @@ footer img {
   outline: none;
 }
 
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  height: 100vh;
+  padding-top: 20px;
+  color: white;
+  position: fixed;
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.sidebar a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+}
+
+/* General content styling */
+.article_content {
+  margin-left: 250px; 
+  padding: 30px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.article_content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Article Form */
+.article-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields */
+.article-form label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.article-form input[type="text"],
+.article-form textarea,
+.article-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.article-form input[type="text"]:focus,
+.article-form textarea:focus,
+.article-form input[type="file"]:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none;
+}
+
+/* Textarea specific */
+.article-form textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+/* Button Styling */
+.article-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.article-form button:hover {
+  background-color: #45a049;
+}
+
+/* For better file upload field appearance */
+.article-form input[type="file"] {
+  background-color: #f7f7f7;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.article-form input[type="file"]:hover {
+  background-color: #e7e7e7;
+}
+
 /* Extra Small (phones, 0px and up) */
 @media (max-width: 575.98px) {
 }

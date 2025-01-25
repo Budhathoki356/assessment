@@ -1,26 +1,26 @@
 <?php
+session_start();
 require_once 'db.php';
 
-session_start();
 $is_logged_in = isset($_SESSION['user_id']);
 
 $error_message = "";
 $success_message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $first_name = trim($_POST['first_name']);
-  $last_name = trim($_POST['last_name']);
+  $firstname = trim($_POST['first_name']);
+  $lastname = trim($_POST['last_name']);
   $email = trim($_POST['email']);
   $message = trim($_POST['message']);
 
-  if (empty($first_name) || empty($email) || empty($last_name) || empty($message)) {
+  if (empty($firstname) || empty($email) || empty($lastname) || empty($message)) {
     $error_message = "Please fill in all fields.";
   } else {
 
     $sql = "INSERT INTO contacts (firstname, lastname, email, message) VALUES (:firstname, :lastname, :email, :message)";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':firstname', $first_name);
-    $stmt->bindParam(':lastname', $last_name);
+    $stmt->bindParam(':firstname', $firstname);
+    $stmt->bindParam(':lastname', $lastname);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':message', $message);
 
@@ -79,6 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <ul>
       <li class="nav_item"><a href="./index.php">Home</a></li>
       <li class="nav_item"><a href="./about.php"> About</a></li>
+      <?php if (!$is_logged_in): ?><li class="nav_item"><a href="./login.php">Login</a></li><?php endif; ?>
+      <?php if (!$is_logged_in): ?><li class="nav_item"><a href="./signup.php">Signup</a></li><?php endif; ?>
+      <?php if ($is_logged_in): ?><li class="nav_item"><a href="./logout.php">Logout</a></li><?php endif; ?>
     </ul>
   </nav>
   <main class="container">
@@ -119,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="message">
           <label for="">Your message</label>
-          <textarea name="yourMessage" rows="4" cols="50" name="message"> </textarea>
+          <textarea name="message" rows="4" cols="50"> </textarea>
         </div>
         <input type="submit" value="Submit" id="submit__btn">
       </form>

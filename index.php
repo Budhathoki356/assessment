@@ -47,6 +47,9 @@ $is_logged_in = isset($_SESSION['user_id']);
     <ul>
       <li class="nav_item"><a href="./index.php">Home</a></li>
       <li class="nav_item"><a href="./about.php"> About</a></li>
+      <?php if (!$is_logged_in): ?><li class="nav_item"><a href="./login.php">Login</a></li><?php endif; ?>
+      <?php if (!$is_logged_in): ?><li class="nav_item"><a href="./signup.php">Signup</a></li><?php endif; ?>
+      <?php if ($is_logged_in): ?><li class="nav_item"><a href="./logout.php">Logout</a></li><?php endif; ?>
     </ul>
   </nav>
   <main>

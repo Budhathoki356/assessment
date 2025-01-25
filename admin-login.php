@@ -3,8 +3,8 @@ require_once 'db.php';
 
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+if ($_SESSION['user_id'] === 9) {
+    header("Location: dashboard.php");
     exit();
 }
 
@@ -15,6 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($email) || empty($password)) {
         echo "Please fill in all fields.";
+    } elseif ($email != "admin@g.com") {
+        echo "You dont have any permission.";
+        header('Location: admin-login.php');
     } else {
         $sql = "SELECT id, username, password FROM users WHERE email = :email";
         $stmt = $pdo->prepare($sql);
@@ -26,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: index.php');
-            exit;
+            header('Location: dashboard.php');
+            exit();
         } else {
             echo "Invalid email or password.";
         }
@@ -41,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Login | Roaming Rachel's Adventures | Traveler | Blogger</title>
+        <title>Admin Login</title>
 
         <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png">
 
@@ -62,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </head>
 
     <body>
-        <form method="POST" action="login.php" class="login-form">
-            <h2 class="form-title">Login to Your Account</h2>
+        <form method="POST" action="admin-login.php" class="login-form">
+            <h2 class="form-title">Admin Login</h2>
             <div>
                 <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" id="email" required class="form-input">
@@ -74,9 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <input type="submit" value="Login" class="form-submit">
-            <div>
-                <p>Don't have an account? <a class="signup_btn" href="signup.php">Signup</a></p>
-            </div>
         </form>
     </body>
 </html?
