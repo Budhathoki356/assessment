@@ -25,11 +25,11 @@
   </head>
   <body>
     <header class="header container">
-        <a href="./index.html"><img src="./assets/img/logo.png" alt="Logo" /></a>
+        <a href="./index.php"><img src="./assets/img/logo.png" alt="Logo" /></a>
         <nav class="menu__large">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a href="./about.php">About</a></li>
           </ul>
         </nav>
         <button class="burger__menu"><i class="fa-solid fa-bars"></i></button>
@@ -37,8 +37,8 @@
       </header>
       <nav  class="menu__small">
         <ul>
-          <li class="nav_item"><a href="./index.html">Home</a></li>
-          <li class="nav_item"><a href="./about.html"> About</a></li>
+          <li class="nav_item"><a href="./index.php">Home</a></li>
+          <li class="nav_item"><a href="./about.php"> About</a></li>
         </ul>
       </nav>
    <main class="container">

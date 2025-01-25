@@ -25,11 +25,11 @@
   </head>
   <body>
     <header class="header container">
-      <a href="./index.html"><img src="./assets/img/logo.png" alt="Logo" /></a>
+      <a href="./index.php"><img src="./assets/img/logo.png" alt="Logo" /></a>
       <nav class="menu__large">
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About</a></li>
+          <li><a href="./index.php">Home</a></li>
+          <li><a href="./about.php">About</a></li>
         </ul>
       </nav>
       <button class="burger__menu"><i class="fa-solid fa-bars"></i></button>
@@ -37,8 +37,8 @@
     </header>
     <nav class="menu__small">
       <ul>
-        <li class="nav_item"><a href="./index.html">Home</a></li>
-        <li class="nav_item"><a href="./about.html"> About</a></li>
+        <li class="nav_item"><a href="./index.php">Home</a></li>
+        <li class="nav_item"><a href="./about.php"> About</a></li>
       </ul>
     </nav>
     <main>
@@ -67,7 +67,7 @@
             <img src="./assets/img/image1.png" alt="" class="card__img" />
             <div class="article__card-body">
               <h2 class="article__card-title">
-                <a href="./article.html">
+                <a href="./article.php">
                   Top 10 Hidden Gems You Must Visit in 2024
                 </a>
               </h2>
@@ -81,7 +81,7 @@
             <img src="./assets/img/image2.png" alt="" class="card__img" />
             <div class="article__card-body">
               <h2 class="article__card-title">
-                <a href="./article.html"> The Ultimate Guide to Solo Travel </a>
+                <a href="./article.php"> The Ultimate Guide to Solo Travel </a>
               </h2>
               <p class="article__card-description">
                 Everything you need to know to confidently explore the world on
@@ -93,7 +93,7 @@
             <img src="./assets/img/image3.png" alt="" class="card__img" />
             <div class="article__card-body">
               <h2 class="article__card-title">
-                <a href="./article.html">
+                <a href="./article.php">
                   How to Travel on a Budget Without Sacrificing Comfort
                 </a>
               </h2>
